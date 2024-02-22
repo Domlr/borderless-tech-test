@@ -34,6 +34,8 @@ export const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
   useEffect(() => {
     // Mock fetch function, replace with your actual API call
     const fetchUsers = async () => {
+      const data = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+      console.log(data);
       // Example: const response = await fetch('your-api-endpoint');
       // const data = await response.json();
       // setUsers(data);
