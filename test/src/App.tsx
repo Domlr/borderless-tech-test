@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.scss";
-import CardComponent from "./components/cardComponent";
-import TitleComponent from "./components/title/TitleComponent";
+import CardComponent from "./components/cardComponent/CardComponent";
+import TitleComponent from "./components/titleComponent/TitleComponent";
 
 const App: React.FC = () => {
   return (
