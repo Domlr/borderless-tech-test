@@ -24,21 +24,21 @@ const UsersPage: React.FC = () => {
     <div className="container mx-auto p-4">
       <TitleComponent />
 
-      <div className="flex flex-col md:flex-row justify-between items-center px-4 py-2 bg-white shadow">
+      <div className="flex flex-col w-full sm:flex-row justify-end items-center px-4 py-2 bg-white shadow">
         <input
           type="text"
           placeholder="Search by name..."
-          className="mb-2 md:mb-0 md:flex-1 px-4 py-2 border rounded"
+          className="mb-2 md:mb-0  px-4 py-2 border rounded w-full sm:w-2/6"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
 
         <select
-          className="md:ml-2 px-4 py-2 border rounded"
+          className="md:ml-2 px-4 py-2 border rounded w-full sm:w-1/6"
           value={filterCountry}
           onChange={(e) => setFilterCountry(e.target.value)}
         >
-          <option value="">Filter by country</option>
+          <option value="">Filter</option>
           {countries.map((option) => (
             <option key={option.countryCode} value={option.countryCode}>
               {option.country}
