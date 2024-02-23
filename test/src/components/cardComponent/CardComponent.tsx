@@ -22,11 +22,12 @@ export default function CardComponent({ user }: CardComponentProps) {
             className="h-8 rounded-sm"
           />
         </div>
-        <div className="text-sm text-blue-400">Borderless Verified</div>
+        <div className="text-sm text-blue-400 my-2">Borderless Verified</div>
         <div className="text-sm  flex justify-between">
           <h3 className="text-gray-500">Location:</h3>{" "}
           <h3 className="text-gray-800">{user.address.city}</h3>
         </div>
+        <div className="border-t border-gray-200  mx-auto my-2 rounded-sm"></div>
         <div className="text-sm  flex justify-between">
           <h3 className="text-gray-500">Role:</h3>{" "}
           <h3 className="text-gray-800">carer</h3>
