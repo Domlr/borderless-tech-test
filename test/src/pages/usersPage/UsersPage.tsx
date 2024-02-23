@@ -5,21 +5,36 @@ import { useUser } from "../../context/UserContext";
 const UserDetailsPage: React.FC = () => {
   const { userId } = useParams<{ userId: string }>();
   const { users } = useUser();
-  console.log(userId);
 
   // Find the user from the context using the ID from the URL
   const user = users.find((user) => user.id === Number(userId));
 
-  console.log(user, "this is user");
   if (!user) {
     return <div>User not found</div>;
   }
 
   return (
-    <div>
-      <h1>User Details</h1>
-      <p>Name: {user.name}</p>
-      <p>Nationality {user.countries.country}</p>
+    <div className="bg-white p-4 sm:p-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-center">
+        {/* Left side: flag and user info */}
+        <div className="flex items-center space-x-4">
+          <img
+            src={`https://flagsapi.com/${user.countries.countryCode}/flat/64.png`}
+            alt={`${user.countries.country} flag`}
+            className="h-full w-20 object-cover"
+          />
+          <div>
+            <h2 className="text-lg font-bold">{user.name}</h2>
+            <p className="text-sm text-gray-500">Borderless Verified</p>
+          </div>
+        </div>
+
+        {/* Right side: overview */}
+        <div>
+          <h3 className="text-lg font-bold">Overview</h3>
+          <p className="text-md mt-2">Carer</p>
+        </div>
+      </div>
     </div>
   );
 };

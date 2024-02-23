@@ -1,8 +1,8 @@
 export default function TitleComponent() {
   return (
-    <div className="bg-blue-500 text-white text-center p-4">
-      <h1>Direct Candidates</h1>
-      <h2>These candidates have applied to you directly</h2>
+    <div className="my-4 p-4 border border-gray-200 rounded shadow hover:shadow-md transition-shadow">
+      <h1 className="text-xl font-bold">Direct Candidates</h1>
+      <p>These candidates have applied to you directly</p>
     </div>
   );
 }
