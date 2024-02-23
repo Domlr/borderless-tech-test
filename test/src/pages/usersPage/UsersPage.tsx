@@ -19,8 +19,7 @@ const UserDetailsPage: React.FC = () => {
     <div>
       <h1>User Details</h1>
       <p>Name: {user.name}</p>
-      <p>Age: {user.age}</p>
-      <p>Date of Birth: {user.dateOfBirth}</p>
+      <p>Nationality {user.countries.country}</p>
     </div>
   );
 };

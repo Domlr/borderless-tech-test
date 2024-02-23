@@ -27,21 +27,48 @@ interface UserProviderProps {
   children: ReactNode;
 }
 
+interface Country {
+  countryCode: string;
+  country: string;
+}
+
+// Define the array of country objects
+const countries: Country[] = [
+  { countryCode: "BE", country: "Belgium" },
+  { countryCode: "FR", country: "France" },
+  { countryCode: "DE", country: "Germany" },
+  { countryCode: "IT", country: "Italy" },
+  { countryCode: "JP", country: "Japan" },
+  { countryCode: "BR", country: "Brazil" },
+];
+
+// Define the function that returns a random country object
+const getRandomCountry = (): Country => {
+  const randomIndex = Math.floor(Math.random() * countries.length);
+  return countries[randomIndex];
+};
+
 export const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
   const [users, setUsers] = useState<User[]>([]);
   const [selectedUser, setSelectedUser] = useState<User | null>(null);
 
   useEffect(() => {
-    // Mock fetch function, replace with your actual API call
     const fetchUsers = async () => {
       const response = await fetch(
         "https://jsonplaceholder.typicode.com/users"
       );
       const data = await response.json();
 
-      console.log(data, "toast");
+      // Map through each user and add a random image URL
+      const alteredData = data.map((user: User) => ({
+        ...user,
+        countries: getRandomCountry(),
+        imageUrl: `https://picsum.photos/id/${user.id}/200/300`,
+      }));
 
-      setUsers(data);
+      console.log(alteredData, "toast");
+
+      setUsers(alteredData);
     };
 
     fetchUsers();

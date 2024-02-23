@@ -1,12 +1,34 @@
+export interface Address {
+  city: string;
+  geo: {
+    lat: string;
+    lng: string;
+  };
+  street: string;
+  suite: string;
+  zipcode: string;
+}
+
+export interface Company {
+  bs: string;
+  catchPhrase: string;
+  name: string;
+}
+
+export interface Country {
+  country: string;
+  countryCode: string;
+}
+
 export interface User {
   id: number;
-  age: number;
-  dateOfBirth: string;
   name: string;
-  title: string;
-  role: string;
+  username: string;
   email: string;
-  telephone: string;
+  address: Address;
+  phone: string;
+  website: string;
+  company: Company;
   imageUrl: string;
-  city: string;
+  countries: Country; // Assuming each user has a single 'countries' property
 }
