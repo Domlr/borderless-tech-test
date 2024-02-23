@@ -63,7 +63,7 @@ export const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
       const alteredData = data.map((user: User) => ({
         ...user,
         countries: getRandomCountry(),
-        imageUrl: `https://picsum.photos/id/${user.id}/200/300`,
+        imageUrl: `https://picsum.photos/id/${user.id}/200/200`,
       }));
 
       console.log(alteredData, "toast");

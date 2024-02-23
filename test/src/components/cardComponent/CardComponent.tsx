@@ -8,11 +8,13 @@ export default function CardComponent({ user }: CardComponentProps) {
   console.log(user, "hodsfhiosdfhios");
   return (
     <div>
-      <img
-        src={user.imageUrl}
-        alt={user.name}
-        className="rounded-lg object-cover mx-auto"
-      />
+      <div className="w-full flex-shrink-0">
+        <img
+          src={user.imageUrl}
+          alt={user.name}
+          className="rounded-lg object-cover mx-auto w-full h-full"
+        />
+      </div>
       <div className="mt-2">
         <div className="flex justify-between align-middle">
           <div className="text-md font-bold">{user.name}</div>
