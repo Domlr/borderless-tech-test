@@ -33,7 +33,7 @@ interface Country {
 }
 
 // Define the array of country objects
-const countries: Country[] = [
+export const countries: Country[] = [
   { countryCode: "BE", country: "Belgium" },
   { countryCode: "FR", country: "France" },
   { countryCode: "DE", country: "Germany" },
