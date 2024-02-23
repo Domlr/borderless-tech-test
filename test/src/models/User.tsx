@@ -8,4 +8,5 @@ export interface User {
   email: string;
   telephone: string;
   imageUrl: string;
+  city: string;
 }

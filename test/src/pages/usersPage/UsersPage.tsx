@@ -5,10 +5,12 @@ import { useUser } from "../../context/UserContext";
 const UserDetailsPage: React.FC = () => {
   const { userId } = useParams<{ userId: string }>();
   const { users } = useUser();
+  console.log(userId);
 
   // Find the user from the context using the ID from the URL
   const user = users.find((user) => user.id === Number(userId));
 
+  console.log(user, "this is user");
   if (!user) {
     return <div>User not found</div>;
   }
