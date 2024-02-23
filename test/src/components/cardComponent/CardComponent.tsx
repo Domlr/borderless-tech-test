@@ -7,26 +7,31 @@ interface CardComponentProps {
 export default function CardComponent({ user }: CardComponentProps) {
   console.log(user, "hodsfhiosdfhios");
   return (
-    <>
+    <div>
       <img
         src={user.imageUrl}
         alt={user.name}
-        className="rounded-lg  object-cover mx-auto"
+        className="rounded-lg object-cover mx-auto"
       />
-      <div className="text-center mt-2">
-        <div className="text-lg font-bold">
-          {user.name}
+      <div className="mt-2">
+        <div className="flex justify-between align-middle">
+          <div className="text-md font-bold">{user.name}</div>
           <img
             src={`https://flagsapi.com/${user.countries.countryCode}/flat/64.png`}
-            alt={user.countries.countryCode}
+            alt={`${user.countries.country} flag`}
+            className="h-8 rounded-sm"
           />
         </div>
-        <div className="text-sm text-gray-600">Borderless Verified</div>
-        <div className="text-sm text-gray-500">
-          Location: {user.address.city}
+        <div className="text-sm text-blue-400">Borderless Verified</div>
+        <div className="text-sm  flex justify-between">
+          <h3 className="text-gray-500">Location:</h3>{" "}
+          <h3 className="text-gray-800">{user.address.city}</h3>
         </div>
-        <div className="text-sm text-gray-500">Role: carer</div>
+        <div className="text-sm  flex justify-between">
+          <h3 className="text-gray-500">Role:</h3>{" "}
+          <h3 className="text-gray-800">carer</h3>
+        </div>
       </div>
-    </>
+    </div>
   );
 }
