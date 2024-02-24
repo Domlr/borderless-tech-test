@@ -572,6 +572,9 @@ video {
 .justify-end {
   justify-content: flex-end;
 }
+.justify-center {
+  justify-content: center;
+}
 .justify-between {
   justify-content: space-between;
 }
@@ -698,10 +701,6 @@ video {
 
   .md\:ml-2 {
     margin-left: 0.5rem;
-  }
-
-  .md\:flex-1 {
-    flex: 1 1 0%;
   }
 
   .md\:grid-cols-3 {
