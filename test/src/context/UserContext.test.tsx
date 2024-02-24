@@ -2,7 +2,9 @@ import { render, screen, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { UserProvider, useUser } from "./UserContext"; // Adjust the import path as necessary
 
+// Adjustments to beforeEach to avoid TypeScript errors
 beforeEach(() => {
+  jest.resetAllMocks(); // Resets all mocks, but keeps the mock implementation if set
   (global.fetch as jest.Mock) = jest.fn().mockImplementation(() =>
     Promise.resolve({
       json: () =>
@@ -16,6 +18,11 @@ beforeEach(() => {
         ]),
     })
   );
+});
+
+// Use afterEach to clean up if necessary
+afterEach(() => {
+  jest.restoreAllMocks(); // Optional based on your needs
 });
 
 // Mock component to test the context
@@ -36,11 +43,6 @@ const TestComponent = () => {
 };
 
 describe("UserProvider", () => {
-  beforeEach(() => {
-    // Clear all mocks before each test
-    global.fetch.mockClear();
-  });
-
   it("fetches users and updates state", async () => {
     render(
       <UserProvider>
