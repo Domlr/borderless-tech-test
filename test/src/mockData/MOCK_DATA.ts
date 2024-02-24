@@ -1,5 +1,5 @@
 import {User} from '../models/User'
-const mockUser: User = {
+export const mockUser: User = {
     id: 1,
     name: "John Doe",
     username: "johndoe",
