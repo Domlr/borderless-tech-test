@@ -1,4 +1,3 @@
-import React from "react";
 import { render, screen, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { UserProvider, useUser } from "./UserContext"; // Adjust the import path as necessary
