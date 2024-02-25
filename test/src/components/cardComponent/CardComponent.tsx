@@ -5,7 +5,6 @@ interface CardComponentProps {
 }
 
 export default function CardComponent({ user }: CardComponentProps) {
-  console.log(user, "hodsfhiosdfhios");
   return (
     <div>
       <div className="w-full flex-shrink-0">

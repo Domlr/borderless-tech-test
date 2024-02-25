@@ -30,5 +30,5 @@ export interface User {
   website: string;
   company: Company;
   imageUrl: string;
-  countries: Country; // Assuming each user has a single 'countries' property
+  countries: Country;
 }
